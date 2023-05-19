@@ -1,1 +1,1 @@
-[![Ravi Patel](contributor/didi.jpg)](https://github.com/ravipatel10/)
+[![Ravi Patel](contributor/didi.jpg)](https://github.com/ravipatel10)
