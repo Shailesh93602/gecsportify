@@ -62,7 +62,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
 
-mongoose.connect("mongodb://127.0.0.1:27017/players");
+mongoose.connect("mongodb+srv://shailesh93602:Shailesh200@sportifydb.jdckl7j.mongodb.net/players");
 
 var db = mongoose.connection;
 //listen for requests
