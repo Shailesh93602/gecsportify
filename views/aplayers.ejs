@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <div class="container">
+
+        <h1 class="heading center">Players List</h1>
+        <table>
+            <tr>
+                <th>Sr No.</th>
+                <th>Full Name</th>
+                <th>Branch</th>
+                <th>Semester</th>
+                <th>Batsman</th>
+                <th>Bowler</th>
+                <th>Wicket Keeper</th>
+                <th>Only Fielder</th>
+                <th>Phone NO.</th>
+                <th>Team</th>
+            </tr>
+            <% var x = 1 %>
+            <% data.forEach(function(players) { %>
+                <tr>
+                    <td><%= x++ %></td>
+                    <!-- <td><a href="#" class="name-link"><%= players.fullname %></a></td> -->
+                    <td><a href="/addteam?playerId=<%= players._id %>"><%= players.fullname %></a></td>
+                    <td><%= players.branch %></td>
+                    <td><%= players.semester %></td>
+                    <td><%= players.batsman %></td>
+                    <td><%= players.bowler %></td>
+                    <td><%= players.wk %></td>
+                    <td><%= players.other %></td>
+                    <td><%= players.phone %></td>
+                    <td><%= players.team %></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+    <%- include('./partials/footer.ejs') %>   
+</body>
+</html>

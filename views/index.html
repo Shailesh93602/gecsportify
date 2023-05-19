@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sportify Club | <%= title %></title>
+        <link rel="stylesheet" href="https:/unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <img src="/images/gec.png" alt="gec">
+                <li><a href="/">Home</a></li>
+                <li><a href="/players">Players</a></li>
+                <li><a href="/teams">Teams</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <!-- <div class="sportifylogo"><img src="/images/sportify.png" alt="sportify"></div> -->
+            <h1>Player Registration</h1>
+            <!-- action = "/register" method="POST" -->
+            <form action="/register" method="post">
+                <input type="text" name="fullname" placeholder="Full Name"><br><br>
+                <input type="number" name="phone" placeholder="Contact Number"><br><br>
+                <select name="branch" id="branch">
+                    <option value="" selected>Branch</option>
+                    <option value="it">Information Technology</option>
+                    <option value="ec">Electronics & Communication</option>
+                    <option value="cse">Computer Engineering</option>
+                    <option value="civil">Civil Engineering</option>
+                    <option value="mech">Mechanical Engineering</option>
+                    <option value="ict">Information Communication Technology</option>
+                    <option value="prod">Production Engineering</option>
+                </select><br><br>
+                <select name="semester" id="sem">
+                    <option value="" selected>Semester</option>
+                    <option value="2">2nd</option>
+                    <option value="4">4th</option>
+                    <option value="6">6th</option>
+                    <option value="8">8th</option>
+                </select><br><br>
+                <h3>Your Designation</h3>
+                <select id="batsman" name="batsman">
+                    <option value="" selected>Batsman</option>
+                    <option value="left hand batsman">Left Hand Batsman</option>
+                    <option value="right hand batsman">Right Hand Batsman</option>
+                </select>
+                <select name="bowler" id="bowler">
+                    <option value="">Bowler</option>
+                    <option value="left arm fast">Left Arm Fast</option>
+                    <option value="right arm fast">Right Arm Fast</option>
+                    <option value="right arm off spin">Right Arm Off Spin</option>
+                    <option value="right arm leg spin">Right Arm Leg Spin</option>
+                    <option value="left arm orthodogs">Left Arm Orthodogs</option>
+                    <option value="chinaman">Chinaman</option>
+                </select>
+                <select id="wk" name="wk">
+                    <option value="">Wicket Keeper</option>
+                    <option value="wicket keeper batsman">Wicket Keeper Batsman</option>
+                    <option value="wicket keeper bowler">Wicket Keeper Bowler</option>
+                </select>
+                <select name="other" id="other">
+                    <option value="">Other</option>
+                    <option value="only fielder">Only Fielder</option>
+                </select><br><br>
+                <button type="submit" class="btn">Register</button>
+                <a href="/admin">Admin</a>
+            </form>   
+        </div>
+    </div>
+    <footer>
+        Copyright &copy; Sportify Club 2023
+    </footer>
+    <script src="/js/script.js"></script>  
+</body>
+</html>

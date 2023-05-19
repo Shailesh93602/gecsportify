@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <div class="container">
+        <%- include('./partials/sidebar.ejs') %>
+        <main class="main page__main">
+            <form class="form main__form" action="javascript:void(0);" method="POST">
+                <div class="form__linput">
+                  <label class="form__label" for="fname">First Name</label>
+                  <input class="form__input" id="fname" type="text" name="fname" placeholder="Your name..."/>
+                </div>
+                <div class="form__linput">
+                  <label class="form__label" for="lname">Last Name</label>
+                  <input class="form__input" id="lname" type="text" name="lname" placeholder="Your last name..."/>
+                </div>
+                <div class="form__linput">
+                  <label class="form__label" for="country-select">Country</label>
+                  <select class="form__select" id="country-select" name="countries">
+                    <option value="">Please choose your country</option>
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                  </select>
+                </div>
+                <div class="form__linput">
+                  <label class="form__label" for="subject">Subject</label>
+                  <textarea class="form__textarea" id="subject" name="subject" placeholder="Write something.." rows="7"></textarea>
+                </div>
+                <button class="primary-btn form__btn" type="submit">Submit</button>
+            </form>
+        </main>
+    </div>
+    <%- include('./partials/footer.ejs') %>   
+</body>
+</html>
