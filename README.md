@@ -1,1 +1,1 @@
-![Ravi Patel](contributor/didi.jpg)
+!Ravi Patel(contributor/didi.jpg)
