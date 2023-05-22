@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 let alert = require('alert');
+const nodemailer = require('nodemailer');
 // require("./db/conn");
 // const Player = require("./models/players");
 //give port number
@@ -298,6 +299,9 @@ app.post("/aplayers", async (req, res) => {
             res.status(500).send('Internal Server Error');
           }
     }
+    else{
+        res.send("invalid password");
+    }
 })
 
 //create new user in database
@@ -360,3 +364,40 @@ app.post('/teamval', async function(req, res) {
         res.status(500).send("Internal Server Error");
       }
     });
+
+
+// Configure Nodemailer
+const transporter = nodemailer.createTransport({
+  service: 'outlook',
+  auth: {
+    user: 'sportifygec@outlook.com',
+    pass: 'admingec@2023'
+  }
+});
+
+app.post('/contactus', (req, res) => {
+  const { name, email, message } = req.body;
+
+  // Create the email message
+  const mailOptions = {
+    from: 'sportifygec@outlook.com',
+    to: 'shailesh93602@gmail.com',
+    subject: 'New Contact Form Submission',
+    text: `
+      Name: ${name}
+      Email: ${email}
+      Message: ${message}
+    `
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email:', error);
+      res.status(500).send('Error sending email');
+    } else {
+      console.log('Email sent:', info.response);
+      res.render("redirect", {title: "Sent"});
+    }
+  });
+});

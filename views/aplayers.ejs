@@ -3,7 +3,10 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <div class="container">
-
+    <%- include('./partials/head.ejs') %>
+<body>
+    <div class="container">
+        <%- include('./partials/sidebar.ejs') %>
         <h1 class="heading center">Players List</h1>
         <table>
             <tr>
@@ -36,6 +39,19 @@
             <% }); %>
         </table>
     </div>
+    <!-- <script>
+        window.onload = function() {
+          if (window.history && window.history.pushState) {
+            window.history.pushState("", "", document.location.href);
+      
+            window.onpopstate = function() {
+              // Redirect to your desired page
+              window.location.href = "/";
+            };
+          }
+        };
+      </script> -->
+      
     <%- include('./partials/footer.ejs') %>   
 </body>
 </html>

@@ -12,3 +12,10 @@ for(let i=0; i < links.length(); i++){
         navLinks.classList.toggle('hide');
     });
 }
+
+function validateMobileNumber(input) {
+    var mobileNumber = input.value;
+    var isValid = mobileNumber.length == 10 && /^\d{10}$/.test(mobileNumber);
+    return isValid;
+  }
+  

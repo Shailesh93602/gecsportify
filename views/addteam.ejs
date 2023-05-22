@@ -3,13 +3,16 @@
     <%- include('./partials/head.ejs') %>
 <body>
     <div class="container">
-        <form action="/teamval" method="post">
-            <h2 clas="heading">Add to Team</h2>
-            <input type="hidden" name="playerId" value="<%= playerId %>">
-            <input type="number" class="form-input" placeholder="team id" max="16" name="teamnum"><br><br>
-            <button type="submit" class="form-submit">Submit</button>
-        </form>
-    </div>
+        <%- include('./partials/sidebar.ejs') %>
+        <div class="container">
+            <form action="/teamval" method="post">
+                <h2 clas="heading">Add to Team</h2>
+                <input type="hidden" name="playerId" value="<%= playerId %>">
+                <input type="number" class="form-input" placeholder="team id" max="16" name="teamnum"><br><br>
+                <button type="submit" class="form-submit">Submit</button>
+            </form>
+        </div>
+  </div>
     <%- include('./partials/footer.ejs') %>   
 </body>
 </html>

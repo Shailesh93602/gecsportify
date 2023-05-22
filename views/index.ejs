@@ -8,8 +8,8 @@
             <h1 class="form-header">Player Registration</h1>
             <form action="/register" method="post" class="inputContainer">
                 <input class="form-input" type="text" name="fullname" placeholder="Full Name" required><br><br>
-                <input class="form-input" type="number" name="phone" placeholder="Contact Number" required><br><br>
-                <select name="branch" id="branch" class="select-field class="dropDown-menu" required>
+                <input class="form-input" type="tel" name="phone" placeholder="Contact Number" maxlength="10" minlength="10" onblur="if (!validateMobileNumber(this)) this.value=''" required><br><br>
+                <select name="branch" id="branch" class="select-field dropDown-menu" required>
                     <option class="option-field" value="" selected>Branch</option>
                     <option class="option-field" value="it">Information Technology</option>
                     <option class="option-field" value="ec">Electronics & Communication</option>
