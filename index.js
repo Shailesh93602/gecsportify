@@ -71,9 +71,6 @@ var db = mongoose.connection;
 app.listen(port);
 
 app.get('/', (req, res) => {
-    res.set({
-        "Allow-access-Allow-origin": '*'
-    })
     res.render('index', { title: 'Home'});
 });
 
@@ -91,9 +88,26 @@ app.get('/teams', (req, res) => {
 
 app.get('/players', async (req, res) => {
     try {
-        const data = await Player.find({});
-        res.render('players', { title: 'Players', data});
-        console.log(data);
+        const page = parseInt(req.query.page) || 1; // Get the current page from the query parameters
+        const pageSize = parseInt(req.query.pageSize) || 10; // Get the page size from the query parameters
+
+        const totalPlayers = await Player.countDocuments({}); // Get the total number of players in the database
+        const totalPages = Math.ceil(totalPlayers / pageSize); // Calculate the total number of pages
+
+        const players = await Player.find({})
+            .skip((page - 1) * pageSize) // Skip the appropriate number of documents based on the page number
+            .limit(pageSize); // Limit the number of documents to be fetched per page
+
+        res.render('players', {
+            title: 'Players',
+            data: players,
+            currentPage: page,
+            totalPages: totalPages,
+            pageSize: pageSize
+        });
+        // const data = await Player.find({});
+        // res.render('players', { title: 'Players', data});
+        // console.log(data);
       } catch (err) {
         console.error(err);
         res.status(500).send('Internal Server Error');
@@ -307,9 +321,9 @@ app.post("/aplayers", async (req, res) => {
 //create new user in database
 app.post("/register", async (req, res) => {
     var fullname = req.body.fullname;
-    console.log(fullname);
+    // console.log(fullname);
     var phone = req.body.phone;
-    console.log(phone);
+    // console.log(phone);
     var branch = req.body.branch;
     var semester = req.body.semester;
     var batsman = req.body.batsman;

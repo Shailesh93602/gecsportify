@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="/css/style.css">
+    <%- include('../partials/head.ejs') %>
 <body>
     <div class="container">
-
+        <%- include('../partials/sidebar.ejs') %>
         <h1 class="heading center">Team 16</h1>
-        <table>
-            <tr>
-                <th>Sr No.</th>
-                <th>Full Name</th>
-                <th>Branch</th>
-                <th>Semester</th>
-                <th>Batsman</th>
-                <th>Bowler</th>
-                <th>Wicket Keeper</th>
-                <th>Only Fielder</th>
-                <th>Phone NO.</th>
-            </tr>
-            <% var x = 1 %>
-            <% players.forEach(function(players) { %>
-                <tr>
-                    <td><%= x++ %></td>
-                    <td><%= players.fullname %></td>
-                    <td><%= players.branch %></td>
-                    <td><%= players.semester %></td>
-                    <td><%= players.batsman %></td>
-                    <td><%= players.bowler %></td>
-                    <td><%= players.wk %></td>
-                    <td><%= players.other %></td>
-                    <td><%= players.phone %></td>
-                </tr>
-            <% }); %>
-        </table>
+        <%-include('../partials/table.ejs') %>
     </div>
+    <%- include('../partials/footer.ejs') %>
 </body>
 </html>

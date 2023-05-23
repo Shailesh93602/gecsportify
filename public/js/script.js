@@ -17,5 +17,4 @@ function validateMobileNumber(input) {
     var mobileNumber = input.value;
     var isValid = mobileNumber.length == 10 && /^\d{10}$/.test(mobileNumber);
     return isValid;
-  }
-  
+}
