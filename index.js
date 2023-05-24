@@ -69,6 +69,7 @@ var db = mongoose.connection;
 //listen for requests
 // app.listen(3000);
 app.listen(port);
+console.log(port);
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home'});
@@ -303,7 +304,7 @@ app.get('/team/team16', async function(req, res) {
 app.post("/aplayers", async (req, res) => {
     var user = req.body.username;
     var pass = req.body.password;
-    if(user == "cricketadmin@sportify" && pass == "sportifyadmin"){
+    if(user == ADMIN && pass == ADMINPASS){
         // res.render('aplayers', {title: 'Admin'});
         try {
             const data = await Player.find({});
@@ -384,8 +385,8 @@ app.post('/teamval', async function(req, res) {
 const transporter = nodemailer.createTransport({
   service: 'outlook',
   auth: {
-    user: 'sportifygec@outlook.com',
-    pass: 'admingec@2023'
+    user: "sportifygec@outlook.com",
+    pass: "admingec@2023"
   }
 });
 
