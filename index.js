@@ -304,7 +304,7 @@ app.get('/team/team16', async function(req, res) {
 app.post("/aplayers", async (req, res) => {
     var user = req.body.username;
     var pass = req.body.password;
-    if(user == ADMIN && pass == ADMINPASS){
+    if(user == "cricketadmin@sportify" && pass == "sportifyadmin"){
         // res.render('aplayers', {title: 'Admin'});
         try {
             const data = await Player.find({});
