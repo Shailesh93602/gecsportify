@@ -3,13 +3,11 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 let alert = require('alert');
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 // require("./db/conn");
 // const Player = require("./models/players");
 //give port number
 const port = process.env.PORT || 3000;
-
-
-
 
 
 const conn = require("./db/conn");
@@ -301,23 +299,73 @@ app.get('/team/team16', async function(req, res) {
     }
 });
 
-app.post("/aplayers", async (req, res) => {
+// Handle GET requests for /aplayers
+app.get('/aplayers', async (req, res) => {
+    var user = req.query.username;
+    var pass = req.query.password;
+  
+    if (user === "cricketadmin@sportify" && pass === "sportifyadmin") {
+      try {
+        const page = parseInt(req.query.page) || 1; // Get the current page from the query parameters
+        const pageSize = parseInt(req.query.pageSize) || 10; // Get the page size from the query parameters
+    
+        const totalPlayers = await Player.countDocuments({}); // Get the total number of players in the database
+        const totalPages = Math.ceil(totalPlayers / pageSize); // Calculate the total number of pages
+    
+        const players = await Player.find({})
+          .skip((page - 1) * pageSize) // Skip the appropriate number of documents based on the page number
+          .limit(pageSize); // Limit the number of documents to be fetched per page
+    
+        res.render('aplayers', {
+          title: 'Admin',
+          data: players,
+          currentPage: page,
+          totalPages: totalPages,
+          pageSize: pageSize
+        });
+      } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+      }
+    } else {
+      res.send("Invalid password");
+    }
+  });
+  
+  
+
+app.post('/aplayers', async (req, res) => {
     var user = req.body.username;
     var pass = req.body.password;
     if(user == "cricketadmin@sportify" && pass == "sportifyadmin"){
-        // res.render('aplayers', {title: 'Admin'});
         try {
-            const data = await Player.find({});
-            res.render('aplayers', { title: 'Admin', data});
-          } catch (err) {
+            const page = parseInt(req.query.page) || 1; // Get the current page from the query parameters
+            const pageSize = parseInt(req.query.pageSize) || 10; // Get the page size from the query parameters
+
+            const totalPlayers = await Player.countDocuments({}); // Get the total number of players in the database
+            const totalPages = Math.ceil(totalPlayers / pageSize); // Calculate the total number of pages
+
+            const players = await Player.find({})
+                .skip((page - 1) * pageSize) // Skip the appropriate number of documents based on the page number
+                .limit(pageSize); // Limit the number of documents to be fetched per page
+
+            res.render('aplayers', {
+                title: 'Admin',
+                data: players,
+                currentPage: page,
+                totalPages: totalPages,
+                pageSize: pageSize
+            });
+        } catch (err) {
             console.error(err);
             res.status(500).send('Internal Server Error');
-          }
+        }
     }
     else{
-        res.send("invalid password");
+        res.send("Invalid password");
     }
-})
+});
+
 
 //create new user in database
 app.post("/register", async (req, res) => {

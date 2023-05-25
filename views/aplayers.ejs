@@ -22,7 +22,7 @@
                 <th>Phone NO.</th>
                 <th>Team</th>
             </tr>
-            <% var x = 1 %>
+            <% var x = (currentPage - 1) * pageSize + 1 %>
             <% data.forEach(function(players) { %>
                 <tr>
                     <td><%= x++ %></td>
@@ -40,6 +40,24 @@
             <% }); %>
         </table>
         </div>
+        <div class="pagination">
+            <% if (currentPage > 1) { %>
+              <a href="/aplayers?page=<%= currentPage - 1 %>&pageSize=<%= pageSize %>&username=cricketadmin@sportify&password=sportifyadmin">Previous</a>
+            <% } %>
+          
+            <% for (let i = 1; i <= totalPages; i++) { %>
+              <% if (i === currentPage) { %>
+                <span class="current-page"><%= i %></span>
+              <% } else { %>
+                <a href="/aplayers?page=<%= i %>&pageSize=<%= pageSize %>&username=cricketadmin@sportify&password=sportifyadmin"><%= i %></a>
+              <% } %>
+            <% } %>
+          
+            <% if (currentPage < totalPages) { %>
+              <a href="/aplayers?page=<%= currentPage + 1 %>&pageSize=<%= pageSize %>&username=cricketadmin@sportify&password=sportifyadmin">Next</a>
+            <% } %>
+          </div>
+          
     </div>
     <%- include('./partials/footer.ejs') %>   
 </body>

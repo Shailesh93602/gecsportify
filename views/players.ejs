@@ -66,14 +66,23 @@
                     </table>
                 </div>
                 <div class="pagination">
-                    <% if (currentPage> 1) { %>
+                    <% if (currentPage > 1) { %>
                         <a href="/players?page=<%= currentPage - 1 %>&pageSize=<%= pageSize %>">Previous</a>
-                        <% } %>
+                    <% } %>
 
-                            <% if (currentPage < totalPages) { %>
-                                <a href="/players?page=<%= currentPage + 1 %>&pageSize=<%= pageSize %>">Next</a>
-                                <% } %>
+                    <% for (let i = 1; i <= totalPages; i++) { %>
+                        <% if (i === currentPage) { %>
+                            <span class="current-page"><%= i %></span>
+                        <% } else { %>
+                            <a href="/players?page=<%= i %>&pageSize=<%= pageSize %>"><%= i %></a>
+                        <% } %>
+                    <% } %>
+
+                    <% if (currentPage < totalPages) { %>
+                        <a href="/players?page=<%= currentPage + 1 %>&pageSize=<%= pageSize %>">Next</a>
+                    <% } %>
                 </div>
+
         </div>
 
     </body>
