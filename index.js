@@ -401,32 +401,28 @@ app.post("/register", async (req, res) => {
 
 app.post('/teamval', async function(req, res) {
     try {
-        // const playerName = req.query.playerName;
-        const playerId = req.body.playerId;
-        console.log(playerId);
-        const teamnum = req.body.teamnum;
-        const teamName = "Team " + teamnum;
-        const player = await Player.findOneAndUpdate(
-          { _id: playerId },
-          { $set: { team: teamName } },
-          { new: true }
-        );
-    
-        if (!player) {
-          res.status(404).send("Player not found");
-        } else {
-            // res.render('admin', {title: 'Admin'});
-            alert("Added Successfully!");
-            const data = await Player.find({});
-            res.render('aplayers', { title: 'Admin', data});
-        //   console.log(`Team updated`);
-        //   res.status(200).send(`Team updated `);
-        }
-      } catch (err) {
-        console.error(err);
-        res.status(500).send("Internal Server Error");
-      }
-    });
+      const playerId = req.body.playerId;
+      const teamnum = req.body.teamnum;
+      const teamName = "Team " + teamnum;
+      
+      await Player.findOneAndUpdate(
+        { _id: playerId },
+        { $set: { team: teamName } }
+      );
+      
+      const page = parseInt(req.query.page) || 1; // Get the current page from the query parameters
+      const pageSize = parseInt(req.query.pageSize) || 10; // Get the page size from the query parameters
+  
+      // Redirect back to the same page with the same pagination settings
+      res.redirect(`/aplayers?page=${page}&pageSize=${pageSize}&username=cricketadmin@sportify&password=sportifyadmin`);
+    } catch (err) {
+      console.error(err);
+      res.status(500).send("Internal Server Error");
+    }
+  });
+  
+  
+  
 
 
 // Configure Nodemailer
