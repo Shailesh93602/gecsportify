@@ -233,72 +233,6 @@ app.get('/team/team10', async function(req, res) {
     }
 });
 
-app.get('/team/team11', async function(req, res) {
-    const teamName = "Team 11";
-    try {
-        const players = await Player.find({ team: teamName }).exec();
-        res.render('team/team11', { title: "Team 11", players });
-    } catch (err) {
-        console.error(err);
-        return res.status(500).send('Error retrieving players');
-    }
-});
-
-app.get('/team/team12', async function(req, res) {
-    const teamName = "Team 12";
-    try {
-        const players = await Player.find({ team: teamName }).exec();
-        res.render('team/team12', { title: "Team 12", players });
-    } catch (err) {
-        console.error(err);
-        return res.status(500).send('Error retrieving players');
-    }
-});
-
-app.get('/team/team13', async function(req, res) {
-    const teamName = "Team 13";
-    try {
-        const players = await Player.find({ team: teamName }).exec();
-        res.render('team/team13', { title: "Team 13", players });
-    } catch (err) {
-        console.error(err);
-        return res.status(500).send('Error retrieving players');
-    }
-});
-
-app.get('/team/team14', async function(req, res) {
-    const teamName = "Team 14";
-    try {
-        const players = await Player.find({ team: teamName }).exec();
-        res.render('team/team14', { title: "Team 14", players });
-    } catch (err) {
-        console.error(err);
-        return res.status(500).send('Error retrieving players');
-    }
-});
-
-app.get('/team/team15', async function(req, res) {
-    const teamName = "Team 15";
-    try {
-        const players = await Player.find({ team: teamName }).exec();
-        res.render('team/team15', { title: "Team 15", players });
-    } catch (err) {
-        console.error(err);
-        return res.status(500).send('Error retrieving players');
-    }
-});
-
-app.get('/team/team16', async function(req, res) {
-    const teamName = "Team 16";
-    try {
-        const players = await Player.find({ team: teamName }).exec();
-        res.render('team/team16', { title: "Team 16", players });
-    } catch (err) {
-        console.error(err);
-        return res.status(500).send('Error retrieving players');
-    }
-});
-
 // Handle GET requests for /aplayers
 app.get('/aplayers', async (req, res) => {
     var user = req.query.username;
@@ -412,6 +346,7 @@ app.post('/teamval', async function(req, res) {
       
       const page = parseInt(req.query.page) || 1; // Get the current page from the query parameters
       const pageSize = parseInt(req.query.pageSize) || 10; // Get the page size from the query parameters
+
   
       // Redirect back to the same page with the same pagination settings
       res.redirect(`/aplayers?page=${page}&pageSize=${pageSize}&username=cricketadmin@sportify&password=sportifyadmin`);
@@ -456,6 +391,7 @@ app.post('/contactus', (req, res) => {
       res.status(500).send('Error sending email');
     } else {
       console.log('Email sent:', info.response);
+    //   res.status(200).send('Email sent Successfully');
       res.render("redirect", {title: "Sent"});
     }
   });
