@@ -4,7 +4,7 @@
 <body>
     <div class="container">
         <%- include('./partials/sidebar.ejs') %>
-        <div class="container">
+        <div class="container" onsubmit="return confirmFormSubmission(event)">
             <form action="/teamval" method="post">
                 <h2 clas="heading">Add to Team</h2>
                 <input type="hidden" name="playerId" value="<%= playerId %>">

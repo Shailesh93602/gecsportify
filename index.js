@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-let alert = require('alert');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 // require("./db/conn");
@@ -346,10 +345,10 @@ app.post('/teamval', async function(req, res) {
       
       const page = parseInt(req.query.page) || 1; // Get the current page from the query parameters
       const pageSize = parseInt(req.query.pageSize) || 10; // Get the page size from the query parameters
-
   
       // Redirect back to the same page with the same pagination settings
       res.redirect(`/aplayers?page=${page}&pageSize=${pageSize}&username=cricketadmin@sportify&password=sportifyadmin`);
+
     } catch (err) {
       console.error(err);
       res.status(500).send("Internal Server Error");

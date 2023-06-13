@@ -6,9 +6,9 @@
         <%- include('./partials/sidebar.ejs') %>
         <div class="form-container">
             <h1 class="form-header">Player Registration</h1>
-            <form action="/register" method="post" class="inputContainer">
+            <form action="/register" method="post" class="inputContainer" onsubmit="return confirmRegistration(event)">
                 <input class="form-input" type="text" name="fullname" placeholder="Full Name" required><br><br>
-                <input class="form-input" type="tel" name="phone" placeholder="Contact Number" maxlength="10" minlength="10" onblur="if (!validateMobileNumber(this)) this.value=''" required><br><br>
+                <input class="form-input" type="tel" name="phone" placeholder="Contact Number" maxlength="10" minlength="10" inputmode="numeric" pattern="\d{10}" onblur="if (!validateMobileNumber(this)) this.value=''" required><br><br>
                 <select name="branch" id="branch" class="select-field dropDown-menu" required>
                     <option class="option-field" value="" selected>Branch</option>
                     <option class="option-field" value="it">Information Technology</option>
