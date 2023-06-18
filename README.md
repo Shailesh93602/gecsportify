@@ -1,7 +1,7 @@
 <h1>Cricket Auction System</h1>
 https://gecsportify.up.railway.app/
 
-![Alt Home Page](./Images/home.png)
+![Alt HomePage](./Images/home.png)
 
 
 <table>
