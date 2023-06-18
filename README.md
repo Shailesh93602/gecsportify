@@ -1,6 +1,8 @@
 <h1>Cricket Auction System</h1>
 https://gecsportify.up.railway.app/
 
+<img src="home.png" width="100px;" alt="home-page" style="max-width: 100%;">
+
 <table>
   <tbody><tr>
     <td align="center"><a href="https://github.com/SatyamKharote"><img src="https://github.com/SatyamKharote.png" width="100px;" alt="" style="max-width: 100%;"><br><sub><b>Satyam</b></sub></a></td>
