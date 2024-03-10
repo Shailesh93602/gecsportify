@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://sportifygec.onrender.com/</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/players</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/teams</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/about</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/contact</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/admin</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/players?page=2&amp;pageSize=10</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/players?page=3&amp;pageSize=10</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/players?page=4&amp;pageSize=10</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/players?page=5&amp;pageSize=10</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team1</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team2</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team3</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team4</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team5</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team6</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team7</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team8</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team9</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/team/team10</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sportifygec.onrender.com/players?page=1&amp;pageSize=10</loc>
+  <lastmod>2024-03-10T03:08:58+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+</urlset>
