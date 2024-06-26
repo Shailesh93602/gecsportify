@@ -3,9 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-// require("./db/conn");
-// const Player = require("./models/players");
-//give port number
+
 const port = process.env.PORT || 3000;
 
 
@@ -63,10 +61,6 @@ app.use(bodyParser.urlencoded({ extended: false}));
 mongoose.connect("mongodb+srv://shailesh93602:Shailesh200@sportifydb.jdckl7j.mongodb.net/players");
 
 var db = mongoose.connection;
-//listen for requests
-// app.listen(3000);
-app.listen(port);
-console.log(port);
 
 app.get('/', (req, res) => {
     res.render('index', { title: 'Home'});
@@ -395,6 +389,11 @@ app.post('/contactus', (req, res) => {
     }
   });
 });
+
+app.listen(port, () => {
+    console.log("Server is running on port: "+ port);
+});
+
 
 
 module.exports = app;
