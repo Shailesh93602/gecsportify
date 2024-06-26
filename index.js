@@ -395,3 +395,6 @@ app.post('/contactus', (req, res) => {
     }
   });
 });
+
+
+export default app;
