@@ -1,6 +1,6 @@
 # Cricket Auction System
 
-https://sportifygec.onrender.com/
+https://gecsportify.vercel.app/
 
 ![Alt HomePage](./Images/home.png)
 ![Alt Players](./Images/players.png)
